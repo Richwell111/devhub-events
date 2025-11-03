@@ -40,7 +40,7 @@ export default function RootLayout({
       <body
         className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}
       >
-        <PostHogProvider>
+        
           <Navbar />
           <div className="absolute inset-0 top-0 z-[-1] min-h-screen">
             <LightRays
@@ -57,7 +57,7 @@ export default function RootLayout({
           </div>
 
           <main>{children}</main>
-        </PostHogProvider>
+       
       </body>
     </html>
   );
