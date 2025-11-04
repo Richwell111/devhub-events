@@ -3,6 +3,7 @@ import ExploreBtn from "@/components/ExploreBtn";
 import Text from "@/components/Text";
 
 import { IEvent } from "@/database";
+import { events } from "@/lib/constants";
 import { cacheLife } from "next/cache";
 
 
@@ -19,7 +20,7 @@ const Page = async () => {
     console.error("API fetch failed: ", errorMessage);
     throw new Error(`Failed to fetch events: ${response.status}`);
   }
-  const { events } = await response.json();
+  // const { events } = await response.json();
 
   return (
     <section>
@@ -38,13 +39,13 @@ const Page = async () => {
         <h3>Featured Events</h3>
 
         <ul className="events">
-          {events &&
+          {/* {events &&
             events.length > 0 &&
             events.map((event: IEvent) => (
               <li key={event.title} className="list-none">
                 <EventCard {...event} />
               </li>
-            ))}
+            ))} */}
         </ul>
       </div>
     </section>
