@@ -12,6 +12,13 @@ const Page = async () => {
   "use cache";
   cacheLife("hours");
   const response = await fetch(`${BASE_URL}/api/events`);
+  
+
+  if (!response.ok) {
+    const text = await response.text(); // see what the server actually returned
+    console.error("API fetch failed:", text);
+    throw new Error(`Failed to fetch events: ${response.status}`);
+  }
   const { events } = await response.json();
 
   return (
