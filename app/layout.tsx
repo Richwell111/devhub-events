@@ -4,6 +4,7 @@ import "./globals.css";
 import LightRays from "@/components/LightRays";
 import Navbar from "@/components/Navbar";
 import PostHogProvider from "@/providers/PostHogProvider";
+import { ToastProvider } from "@/components/toast-1";
 
 const schibstedGrotesk = Schibsted_Grotesk({
   variable: "--font-schibsted-grotesk",
@@ -40,7 +41,7 @@ export default function RootLayout({
       <body
         className={`${schibstedGrotesk.variable} ${martianMono.variable} min-h-screen antialiased`}
       >
-        
+        <ToastProvider>
           <Navbar />
           <div className="absolute inset-0 top-0 z-[-1] min-h-screen">
             <LightRays
@@ -57,7 +58,7 @@ export default function RootLayout({
           </div>
 
           <main>{children}</main>
-       
+        </ToastProvider>
       </body>
     </html>
   );
